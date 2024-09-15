@@ -1,0 +1,17 @@
+body {
+  margin: 0px;
+  --tw-bg-opacity: 1;
+  background-color: rgb(51 65 85 / var(--tw-bg-opacity));
+  padding: 0px
+}
+
+body h1 {
+  display: flex;
+  justify-content: center;
+  --tw-text-opacity: 1;
+  color: rgb(250 204 21 / var(--tw-text-opacity))
+}
+
+body h1 span {
+  text-transform: uppercase
+}
