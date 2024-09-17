@@ -10,21 +10,29 @@ const clean = require("gulp-clean");
 function styles() {
   return src("src/scss/style.scss")
     .pipe(sass().on("error", sass.logError))
-    .pipe(concat('output.css'))
+    .pipe(concat("output.css"))
     .pipe(dest("src/css"))
     .pipe(browserSync.stream());
 }
 
 function cssCompressed() {
   return src("src/css/style.min.css")
-  .pipe(sass({ outputStyle: "compressed" }).on("error", sass.logError))
-  .pipe(dest("src/css"))
+    .pipe(sass({ outputStyle: "compressed" }).on("error", sass.logError))
+    .pipe(dest("src/css"));
 }
 
 function scripts() {
-  return src(["src/data/**/*.js", "src/js/*.js", "!src/js/main.min.js"])
+  return src([
+    "src/data/**/*.js",
+    "src/data/milanskih/*.js",
+    "src/data/slmkh/*.js",
+    "src/js/*.js",
+    "!src/js/main.min.js",
+  ])
     .pipe(concat("main.min.js"))
+    .pipe(sourcemaps.init())
     .pipe(uglify())
+    .pipe(sourcemaps.write())
     .pipe(dest("src/js"))
     .pipe(browserSync.stream());
 }
