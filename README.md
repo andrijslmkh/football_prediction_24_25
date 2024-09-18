@@ -1,8 +1,8 @@
 # NPM
 
-<p>dev: "gulp"</p>
-<p>tlw: "npx tailwindcss -i ./src/css/output.css -o ./src/css/style.min.css --watch"</p>
-<p>build: "gulp build"</p>
+<p>npm run dev: "gulp"</p>
+<p>npm run tlw: "npx tailwindcss -i ./src/css/output.css -o ./src/css/style.min.css --watch"</p>
+<p>npm run build: "gulp build"</p>
 
 # GULP
 
