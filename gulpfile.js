@@ -26,6 +26,7 @@ function scripts() {
     "src/data/**/*.js",
     "src/data/milanskih/*.js",
     "src/data/slmkh/*.js",
+    "src/js/hook/**/*.js",
     "src/js/*.js",
     "!src/js/main.min.js",
   ])
@@ -40,6 +41,7 @@ function scripts() {
 function watching() {
   watch(["src/scss/*.scss"], styles);
   watch(["src/data/**/*.js"], scripts);
+  watch(["src/js/hook/*.js"], scripts);
   watch(["src/js/main.js"], scripts);
   watch(["src/**/*.html"]).on("change", browserSync.reload);
 }
