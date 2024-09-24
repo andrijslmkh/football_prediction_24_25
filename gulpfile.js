@@ -40,6 +40,7 @@ function scripts() {
 
 function watching() {
   watch(["src/scss/*.scss"], styles);
+  watch(["src/css/style.min.css"], styles).on("change", browserSync.reload);
   watch(["src/data/**/*.js"], scripts);
   watch(["src/js/hook/*.js"], scripts);
   watch(["src/js/main.js"], scripts);
