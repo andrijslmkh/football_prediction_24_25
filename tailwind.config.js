@@ -5,7 +5,13 @@ module.exports = {
     extend: {
       gridTemplateColumns: {
         // added new 4 column grid as new4
-        24: "repeat(24, minmax(0, 1fr))",
+        small: "50px 50px auto 30px 30px",
+      },
+      gridTemplateRows: {
+        "50px": "50px",
+      },
+      gridAutoRows: {
+        "50px": "minmax(50px, auto)",
       },
     },
   },
