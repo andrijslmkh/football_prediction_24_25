@@ -1,9 +1,92 @@
 body {
-  @apply m-0 p-0 bg-slate-700;
-  h1 {
-    @apply flex justify-center text-yellow-400;
-    span {
-      @apply uppercase;
+  @apply m-0 box-border bg-slate-700 px-4 text-white;
+}
+.section {
+  @apply container mx-auto py-1;
+}
+
+.table__title {
+  h3 {
+    @apply text-center;
+  }
+}
+
+.table__items {
+  .item {
+    @apply flex items-center justify-center;
+  }
+}
+
+.table__description {
+  .table__items {
+    @apply md:grid-cols-md grid grid-cols-small grid-rows-50px;
+
+    .pred__icon {
+    }
+    .position {
+    }
+    .team__icon {
+      @apply hidden md:flex;
+    }
+    .team__name {
+      @apply justify-start pl-3;
+    }
+    .team__games {
+    }
+    .team__win {
+      @apply hidden md:flex;
+    }
+    .team__draw {
+      @apply hidden md:flex;
+    }
+    .team__lose {
+      @apply hidden md:flex;
+    }
+    .team__point {
+    }
+    .team__strick {
+      @apply hidden;
+    }
+  }
+}
+
+.table__team {
+  .table__items {
+    @apply md:grid-cols-md grid auto-rows-50px grid-cols-small;
+    .item {
+      border: 1px solid rgba(115, 114, 114, 0.471);
+    }
+    .pred__icon {
+      img {
+        @apply h-6 w-6;
+      }
+    }
+    .position {
+    }
+    .team__icon {
+      @apply hidden md:flex;
+      img {
+        @apply h-6 w-6;
+      }
+    }
+    .team__name {
+      @apply justify-start px-2 py-2;
+    }
+    .team__games {
+    }
+    .team__win {
+      @apply hidden md:flex;
+    }
+    .team__draw {
+      @apply hidden md:flex;
+    }
+    .team__lose {
+      @apply hidden md:flex;
+    }
+    .team__point {
+    }
+    .team__strick {
+      @apply hidden;
     }
   }
 }
