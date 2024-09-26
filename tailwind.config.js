@@ -5,7 +5,8 @@ module.exports = {
     extend: {
       gridTemplateColumns: {
         // added new 4 column grid as new4
-        small: "50px 50px auto 30px 30px",
+        small: "40px 40px auto 34px 36px",
+        md: "40px 40px 40px auto 34px 34px 34px 34px 36px",
       },
       gridTemplateRows: {
         "50px": "50px",
