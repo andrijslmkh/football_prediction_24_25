@@ -7,16 +7,14 @@ function comparison(data, userData) {
   let count = 0;
   let total = 0;
 
-  for (const k in data) {
-    for (const user in userData) {
-      obj[user] = {};
-      for (const keyData in data[k]) {
-        for (const keyUserData in userData[user]) {
-          //
-          if (keyData === keyUserData) {
-            let dataArray = data[k][keyData];
-            let userArray = userData[user][keyUserData];
-
+  for (const user in userData) {
+    obj[user] = {};
+    for (const key in data) {
+      for (const nameLeague in data[key]) {
+        for (const keyUserLeague in userData[user]) {
+          if (keyUserLeague === nameLeague) {
+            let userArray = userData[user][keyUserLeague];
+            let dataArray = data[key][nameLeague];
             for (let i = 0; i < dataArray.length; i++) {
               for (let k = 0; k < userArray.length; k++) {
                 if (dataArray[i].id == userArray[k].id) {
@@ -44,13 +42,14 @@ function comparison(data, userData) {
               }
             }
             total += count;
-            obj[user][keyData] = count;
+            obj[user][nameLeague] = count;
             obj[user].total = total;
             count = 0;
           }
         }
       }
-      return obj;
+      total = 0;
     }
   }
+  return obj;
 }
