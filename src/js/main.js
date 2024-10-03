@@ -1,6 +1,6 @@
 const srcUefaIcon = `https://img.uefa.com/imgml/favicon/apple-touch-icon-57x57.png`;
-const slmkhPrediction = newObjectCbSort(SLMKH_LCH, objSortPosition);
-const milanskihPrediction = newObjectCbSort(MILANSKIH_LCH, objSortPosition);
+// const slmkhPrediction = newObjectCbSort(SLMKH_LCH, objSortPosition);
+// const milanskihPrediction = newObjectCbSort(MILANSKIH_LCH, objSortPosition);
 
 const dataSorted = newObjectCbSort(DATA, objSortPosition);
 
@@ -49,7 +49,7 @@ function createTableData(dataTable, league = "lch") {
   tableTeam.innerHTML = arrHTML.join("");
 }
 createTableData(dataSorted);
-// // // // //
+// /===========================
 
 function addPredIcon(data, league = "le") {
   let predIconImg = document.querySelectorAll(".pred__icon img");
@@ -62,24 +62,6 @@ function addPredIcon(data, league = "le") {
 }
 
 //
-selectLeague.addEventListener("change", () => {
-  createTableData(dataSorted, selectLeague.value);
-  user();
-});
-//
-selectUser.onchange = user;
-
-function user() {
-  let user = selectUser.value;
-  for (const key in usersPrediction) {
-    if (key == user) {
-      addPredIcon(usersPrediction[key], selectLeague.value);
-    }
-  }
-  if (user === "clear") {
-    clearPredIcon();
-  }
-}
 
 function clearPredIcon() {
   let predIconImg = document.querySelectorAll(".pred__icon img");
@@ -94,10 +76,10 @@ function result(resultData) {
   let arrHTML = [];
 
   for (const key in resultData) {
-    const user = key;
+    const user = key.charAt(0).toUpperCase() + key.slice(1);
     const { lch, le, lc, total } = resultData[key];
 
-    let out = `<div class="item user">${user.toUpperCase()}</div>
+    let out = `<div class="item user">${user}</div>
                 <div class="item user__lch">${lch}</div>
                 <div class="item user__le">${le}</div>
                 <div class="item user__lc">${lc}</div>
@@ -108,3 +90,44 @@ function result(resultData) {
   document.querySelector(".result__info").innerHTML = arrHTML.join("");
 }
 result(resultData);
+
+document.querySelector(".btn-result").addEventListener("click", () => {
+  document.querySelector(".table").style.display = "flex";
+  document.querySelector(".result__table").style.display = "grid";
+  document.querySelector(".table__block").style.display = "none";
+  document.querySelector(".regulations").style.display = "none";
+});
+
+document.querySelector(".btn-regulations").addEventListener("click", () => {
+  document.querySelector(".table").style.display = "none";
+  document.querySelector(".regulations").style.display = "block";
+});
+document.querySelector(".btn-table").onclick = showTable;
+function showTable() {
+  document.querySelector(".table").style.display = "flex";
+  document.querySelector(".result__table").style.display = "none";
+  document.querySelector(".table__block").style.display = "block";
+  document.querySelector(".regulations").style.display = "none";
+}
+
+selectLeague.addEventListener("change", () => {
+  createTableData(dataSorted, selectLeague.value);
+  user();
+
+  showTable();
+});
+
+selectUser.onchange = user;
+function user() {
+  let user = selectUser.value;
+  for (const key in usersPrediction) {
+    if (key == user) {
+      addPredIcon(usersPrediction[key], selectLeague.value);
+    }
+  }
+  if (user === "clear") {
+    clearPredIcon();
+  }
+
+  showTable();
+}
