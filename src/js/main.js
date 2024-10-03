@@ -1,6 +1,7 @@
 const srcUefaIcon = `https://img.uefa.com/imgml/favicon/apple-touch-icon-57x57.png`;
-// const slmkhPrediction = newObjectCbSort(SLMKH_LCH, objSortPosition);
-// const milanskihPrediction = newObjectCbSort(MILANSKIH_LCH, objSortPosition);
+const slmkhPrediction = newObjectCbSort(SLMKH_LCH, objSortPosition);
+const milanskihPrediction = newObjectCbSort(MILANSKIH_LCH, objSortPosition);
+
 const dataSorted = newObjectCbSort(DATA, objSortPosition);
 
 const usersPrediction = newObjectCbSort(USERS__PRED, objSortPosition);
@@ -8,6 +9,9 @@ const usersPrediction = newObjectCbSort(USERS__PRED, objSortPosition);
 const tableTeam = document.querySelector(".table__team");
 const selectLeague = document.querySelector(".select__league");
 const selectUser = document.querySelector(".select__user");
+
+//
+const resultData = comparison(dataSorted, usersPrediction);
 
 function createTableData(dataTable, league = "lch") {
   let arrHTML = [];
@@ -84,3 +88,23 @@ function clearPredIcon() {
     predIconImg[i].attributes[1].value = `UEFA icon`;
   }
 }
+
+//
+function result(resultData) {
+  let arrHTML = [];
+
+  for (const key in resultData) {
+    const user = key;
+    const { lch, le, lc, total } = resultData[key];
+
+    let out = `<div class="item user">${user.toUpperCase()}</div>
+                <div class="item user__lch">${lch}</div>
+                <div class="item user__le">${le}</div>
+                <div class="item user__lc">${lc}</div>
+                <div class="item user__total">${total}</div>
+              `;
+    arrHTML.push(out);
+  }
+  document.querySelector(".result__info").innerHTML = arrHTML.join("");
+}
+result(resultData);
