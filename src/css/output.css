@@ -5,74 +5,74 @@ body {
 .table__section {
   @apply container mx-auto py-6;
 }
-
-.table {
+.table__section .table {
   @apply block py-8 lg:flex lg:max-w-[1240px] lg:justify-center lg:gap-10;
 }
-.table .table__block {
+.table__section .table .table__block {
   @apply w-full;
 }
-.table .table__description .table__items {
+.table__section .table .table__description .table__items {
   @apply grid grid-cols-small grid-rows-50px sm:grid-cols-md;
 }
-.table .table__team .table__items {
+.table__section .table .table__team .table__items {
   @apply grid auto-rows-50px grid-cols-small sm:grid-cols-md;
 }
-.table .table__team .table__items .item {
+.table__section .table .table__team .table__items .item {
   border: 1px solid rgba(115, 114, 114, 0.471);
 }
-.table .table__items .item {
+.table__section .table .table__items .item {
   @apply flex items-center justify-center;
 }
-.table .table__items .pred__icon img {
+.table__section .table .table__items .pred__icon img {
   @apply h-6 w-6;
 }
-.table .table__items .team__icon {
+.table__section .table .table__items .team__icon {
   @apply hidden sm:flex;
 }
-.table .table__items .team__icon img {
+.table__section .table .table__items .team__icon img {
   @apply h-6 w-6;
 }
-.table .table__items .team__name {
+.table__section .table .table__items .team__name {
   @apply justify-start p-2;
 }
-.table .table__items .team__win {
+.table__section .table .table__items .team__win {
   @apply hidden sm:flex;
 }
-.table .table__items .team__draw {
+.table__section .table .table__items .team__draw {
   @apply hidden sm:flex;
 }
-.table .table__items .team__lose {
+.table__section .table .table__items .team__lose {
   @apply hidden sm:flex;
 }
-.table .table__items .team__strick {
+.table__section .table .table__items .team__strick {
   @apply hidden;
 }
-
-.result__table {
+.table__section .result__table {
   @apply hidden w-full gap-y-2 lg:!block lg:pt-[50px];
 }
-.result__table .result__description,
-.result__table .result__info {
+.table__section .result__table .result__description,
+.table__section .result__table .result__info {
   @apply grid grid-cols-12;
 }
-.result__table .result__description .item,
-.result__table .result__info .item {
+.table__section .result__table .result__description .item,
+.table__section .result__table .result__info .item {
   border: 1px solid rgba(115, 114, 114, 0.471);
   @apply col-span-2 p-2 text-center;
 }
-.result__table .result__description .user,
-.result__table .result__info .user {
+.table__section .result__table .result__description .user,
+.table__section .result__table .result__info .user {
   @apply col-span-4 text-left;
 }
-
-.button__mobile {
+.table__section .button__mobile {
   @apply flex gap-4;
 }
-.button__mobile .btn-result {
+.table__section .button__mobile .btn-result {
   @apply block lg:hidden;
 }
-
-.table__select {
+.table__section .table__select {
   @apply flex justify-center gap-4 py-4;
+}
+
+.regulations {
+  @apply hidden;
 }
