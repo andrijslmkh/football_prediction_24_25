@@ -1,6 +1,4 @@
 const srcUefaIcon = `https://img.uefa.com/imgml/favicon/apple-touch-icon-57x57.png`;
-// const slmkhPrediction = newObjectCbSort(SLMKH_LCH, objSortPosition);
-// const milanskihPrediction = newObjectCbSort(MILANSKIH_LCH, objSortPosition);
 
 const dataSorted = newObjectCbSort(DATA, objSortPosition);
 
@@ -51,7 +49,7 @@ function createTableData(dataTable, league = "lch") {
 createTableData(dataSorted);
 // /===========================
 
-function addPredIcon(data, league = "le") {
+function addPredIcon(data, league = "lch") {
   let predIconImg = document.querySelectorAll(".pred__icon img");
 
   const arrData = [...data[league]];
@@ -128,6 +126,5 @@ function user() {
   if (user === "clear") {
     clearPredIcon();
   }
-
   showTable();
 }
