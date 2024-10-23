@@ -24,8 +24,8 @@ function cssCompressed() {
 function scripts() {
   return src([
     "src/data/**/*.js",
-    "src/data/milanskih/*.js",
-    "src/data/slmkh/*.js",
+    // "src/data/milanskih/*.js",
+    // "src/data/slmkh/*.js",
     "src/js/hook/**/*.js",
     "src/js/*.js",
     "!src/js/main.min.js",
