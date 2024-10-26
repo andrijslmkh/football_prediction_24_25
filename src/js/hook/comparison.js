@@ -1,5 +1,7 @@
 function comparison(data, userData) {
-  let obj = {};
+  let id = 1;
+  let array = [];
+
   const tirOneWith = 1;
   const tirOneTo = 8;
   const tirTwoWith = 9;
@@ -8,7 +10,10 @@ function comparison(data, userData) {
   let total = 0;
 
   for (const user in userData) {
-    obj[user] = {};
+    let obj = {};
+    obj.id = id;
+    obj.user = user;
+
     for (const key in data) {
       for (const nameLeague in data[key]) {
         for (const keyUserLeague in userData[user]) {
@@ -42,14 +47,17 @@ function comparison(data, userData) {
               }
             }
             total += count;
-            obj[user][nameLeague] = count;
-            obj[user].total = total;
+            obj[nameLeague] = count;
+            obj.total = total;
             count = 0;
           }
         }
       }
       total = 0;
     }
+    array.push(obj);
+    id++;
   }
-  return obj;
+  // console.log(array);
+  return array;
 }
