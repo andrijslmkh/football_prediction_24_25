@@ -70,8 +70,11 @@ body {
         border: 1px solid rgba(115, 114, 114, 0.471);
         @apply col-span-2 p-2 text-center;
       }
+      .user__position {
+        @apply col-span-1;
+      }
       .user {
-        @apply col-span-4 text-left;
+        @apply col-span-3 text-left;
       }
     }
   }
