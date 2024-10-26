@@ -69,26 +69,6 @@ function clearPredIcon() {
   }
 }
 
-//
-function result(resultData) {
-  let arrHTML = [];
-
-  for (const key in resultData) {
-    const user = key.charAt(0).toUpperCase() + key.slice(1);
-    const { lch, le, lc, total } = resultData[key];
-
-    let out = `<div class="item user">${user}</div>
-                <div class="item user__lch">${lch}</div>
-                <div class="item user__le">${le}</div>
-                <div class="item user__lc">${lc}</div>
-                <div class="item user__total">${total}</div>
-              `;
-    arrHTML.push(out);
-  }
-  document.querySelector(".result__info").innerHTML = arrHTML.join("");
-}
-result(resultData);
-
 document.querySelector(".btn-result").addEventListener("click", () => {
   document.querySelector(".table").style.display = "flex";
   document.querySelector(".result__table").style.display = "grid";
@@ -128,4 +108,27 @@ function user() {
   }
   showTable();
 }
+
+function result(data) {
+  const sortedTotal = arrSortTotal(data);
+  let arrHTML = [];
+
+  sortedTotal.forEach((item, index) => {
+    const { user, lch, le, lc, total } = item;
+    const nameUser = user.charAt(0).toUpperCase() + user.slice(1);
+
+    let out = `<div class="item user__position">${index + 1}</div>
+                <div class="item user">${nameUser}</div>
+                <div class="item user__lch">${lch}</div>
+                <div class="item user__le">${le}</div>
+                <div class="item user__lc">${lc}</div>
+                <div class="item user__total">${total}</div>
+              `;
+    arrHTML.push(out);
+  });
+
+  document.querySelector(".result__info").innerHTML = arrHTML.join("");
+}
+result(resultData);
+
 // TODO Add fun color
