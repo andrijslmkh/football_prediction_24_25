@@ -78,5 +78,5 @@ body {
 }
 
 .regulations {
-  @apply hidden;
+  @apply container mx-auto hidden py-6;
 }
