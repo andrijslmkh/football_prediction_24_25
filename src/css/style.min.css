@@ -9,6 +9,14 @@ body {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.bg_green {
+  background-color: rgb(22 163 74 / 0.55);
+}
+
+.bg_yellow {
+  background-color: rgb(250 204 21 / 0.55);
+}
+
 .table__section {
   width: 100%;
 }
@@ -263,4 +271,10 @@ body {
   display: none;
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
+}
+
+.regulations .regulations__description .regulations__text .regulations_colorBox {
+  display: inline-block;
+  height: 0.625rem;
+  width: 0.625rem;
 }

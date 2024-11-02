@@ -2,6 +2,13 @@ body {
   @apply m-0 box-border bg-slate-700 px-4 text-white;
 }
 
+.bg_green {
+  @apply bg-green-600/55;
+}
+.bg_yellow {
+  @apply bg-yellow-400/55;
+}
+
 .table__section {
   @apply container mx-auto py-6;
 
@@ -98,6 +105,9 @@ body {
     }
     .regulations__text {
       .regulations__number {
+      }
+      .regulations_colorBox {
+        @apply inline-block h-2.5 w-2.5;
       }
     }
   }
