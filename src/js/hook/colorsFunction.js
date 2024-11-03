@@ -74,17 +74,4 @@ function clearColors() {
   removeClass(icon, bgYellow);
   removeClass(team, bgGreen);
   removeClass(team, bgYellow);
-
-  // predIconBlock.forEach((el) => {
-  //   el.classList.remove(bgGreen);
-  //   el.classList.remove(bgYellow);
-  // });
-  // icon.forEach((el) => {
-  //   el.classList.remove(bgGreen);
-  //   el.classList.remove(bgYellow);
-  // });
-  // team.forEach((el) => {
-  //   el.classList.remove(bgGreen);
-  //   el.classList.remove(bgYellow);
-  // });
 }
