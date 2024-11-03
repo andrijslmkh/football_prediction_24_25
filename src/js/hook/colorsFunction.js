@@ -38,20 +38,14 @@ function colors({ data }, userPred, league) {
         // 1 point
         if (dtUser[i].position !== dt[k].position) {
           if (
-            dtUser[i].position >= tirOneWith &&
-            dtUser[i].position <= tirOneTo &&
-            dt[k].position >= tirOneWith &&
-            dt[k].position <= tirOneTo
-          ) {
-            addClassFromId(predIconBlock, dtUser[i].id, bgYellow);
-            addClassFromId(icon, dtUser[i].id, bgYellow);
-            addClassFromId(team, dtUser[i].id, bgYellow);
-          }
-          if (
-            dtUser[i].position >= tirTwoWith &&
-            dtUser[i].position <= tirTwoTo &&
-            dt[k].position >= tirTwoWith &&
-            dt[k].position <= tirTwoTo
+            (dtUser[i].position >= tirOneWith &&
+              dtUser[i].position <= tirOneTo &&
+              dt[k].position >= tirOneWith &&
+              dt[k].position <= tirOneTo) ||
+            (dtUser[i].position >= tirTwoWith &&
+              dtUser[i].position <= tirTwoTo &&
+              dt[k].position >= tirTwoWith &&
+              dt[k].position <= tirTwoTo)
           ) {
             addClassFromId(predIconBlock, dtUser[i].id, bgYellow);
             addClassFromId(icon, dtUser[i].id, bgYellow);
