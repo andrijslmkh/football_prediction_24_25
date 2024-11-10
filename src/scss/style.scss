@@ -97,13 +97,13 @@ a {
     .result__info {
       @apply grid grid-cols-12;
       .item {
-        @apply col-span-2 border-[1px] border-solid border-[#73727294] p-2 text-center;
+        @apply col-span-2 border-[1px] border-solid border-[#73727294] text-center;
       }
       .user__position {
         @apply col-span-1;
       }
       .user {
-        @apply col-span-3 text-left;
+        @apply col-span-3 pl-1 text-left;
       }
     }
   }

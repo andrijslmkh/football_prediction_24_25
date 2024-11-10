@@ -866,7 +866,6 @@ a{
   border-width: 1px;
   border-style: solid;
   border-color: #73727294;
-  padding: 0.5rem;
   text-align: center;
 }
 
@@ -878,6 +877,7 @@ a{
 .table__section .result__table .result__description .user,
 .table__section .result__table .result__info .user{
   grid-column: span 3 / span 3;
+  padding-left: 0.25rem;
   text-align: left;
 }
 
