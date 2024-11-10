@@ -60,9 +60,17 @@ function cleanDist() {
 }
 
 function building() {
-  return src(["src/css/style.min.css", "src/js/main.min.js", "src/**/*.html"], {
-    base: "src",
-  }).pipe(dest("dist"));
+  return src(
+    [
+      "src/css/style.min.css",
+      "src/js/main.min.js",
+      "src/**/*.html",
+      "src/img/**/*.*",
+    ],
+    {
+      base: "src",
+    }
+  ).pipe(dest("dist"));
 }
 
 exports.styles = styles;
