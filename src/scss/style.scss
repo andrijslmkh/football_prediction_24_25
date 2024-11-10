@@ -1,5 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
+
+@import "button.scss";
+
 body {
-  @apply m-0 box-border bg-slate-700 px-4 text-white;
+  @apply m-0 box-border bg-[#0f2d37] px-4 font-manrope text-sm font-normal not-italic text-white;
+}
+
+select {
+  @apply text-black;
+}
+a {
+  @apply tracking-wide text-white no-underline;
 }
 
 .bg_green {
@@ -19,15 +34,23 @@ body {
     }
     .table__description {
       .table__items {
-        @apply grid grid-cols-small grid-rows-50px sm:grid-cols-md;
+        @apply grid grid-cols-small sm:grid-cols-md;
       }
     }
 
     .table__team {
+      .description_tier {
+        @apply mb-1 border-b-[1px] border-solid border-[#73727294] pt-1 text-[10px];
+      }
       .table__items {
         @apply grid auto-rows-50px grid-cols-small sm:grid-cols-md;
         .item {
-          border: 1px solid rgba(115, 114, 114, 0.471);
+          @apply border-[1px] border-solid border-[#73727294];
+        }
+      }
+      .position {
+        span {
+          @apply flex h-6 w-6 items-center justify-center rounded-2xl font-semibold;
         }
       }
     }
@@ -48,7 +71,7 @@ body {
         }
       }
       .team__name {
-        @apply justify-start p-2;
+        @apply justify-start pl-1;
       }
 
       .team__win {
@@ -74,8 +97,7 @@ body {
     .result__info {
       @apply grid grid-cols-12;
       .item {
-        border: 1px solid rgba(115, 114, 114, 0.526);
-        @apply col-span-2 p-2 text-center;
+        @apply col-span-2 border-[1px] border-solid border-[#73727294] p-2 text-center;
       }
       .user__position {
         @apply col-span-1;
