@@ -252,7 +252,7 @@ const DATA = {
         won: 2,
         drawn: 1,
         lost: 1,
-        points: 10,
+        points: 7,
       },
       {
         id: 24,
