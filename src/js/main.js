@@ -13,6 +13,11 @@ function createTableData(dataTable, league = "lch") {
   for (let i = 0; i < dataTable.data[league].length; i++) {
     const { id, name, position, played, points, icon, lost, won, drawn } =
       dataTable.data[league][i];
+
+    if (i == 0) {
+      arrHTML.push(`<div class="description_tier" >Straight to R16</div>`);
+    }
+
     let out = `<div class="table__items">
                       <div class="item pred__icon pred__icon-block" >
                         <img
@@ -20,7 +25,7 @@ function createTableData(dataTable, league = "lch") {
                           alt="UEFA icon"
                         />
                       </div>
-                      <div class="item position">${position}</div>
+                      <div class="item position"><span>${position}</span></div>
                       <div class="item team__icon" data-id=${id}>
                         <img
                           src="${icon}"
@@ -37,11 +42,17 @@ function createTableData(dataTable, league = "lch") {
                     </div>`;
     arrHTML.push(out);
 
-    if (i == 7 || i == 23) {
-      arrHTML.push(`<hr />`);
+    if (i == 7) {
+      arrHTML.push(
+        `<div class="description_tier">Knockout phase play-off places</div>`
+      );
+    }
+    if (i == 23) {
+      arrHTML.push(`<div class="description_tier">Elimination places</div>`);
     }
   }
   tableTeam.innerHTML = arrHTML.join("");
+  positionColor();
 }
 createTableData(dataSorted);
 

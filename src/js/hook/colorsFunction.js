@@ -1,3 +1,6 @@
+const blue = "rgb(0, 70, 130)";
+const skyBlue = "rgb(30, 168, 236)";
+const red = "rgb(189, 0, 0)";
 const bgGreen = "bg_green";
 const bgYellow = "bg_yellow";
 const tirOneWith = 1;
@@ -68,4 +71,20 @@ function clearColors() {
   removeClass(icon, bgYellow);
   removeClass(team, bgGreen);
   removeClass(team, bgYellow);
+}
+
+// color position number
+function positionColor() {
+  let position = document.querySelectorAll(".position span");
+  for (let i = 0; i < position.length; i++) {
+    if (i >= 0 && i <= 7) {
+      position[i].style.backgroundColor = blue;
+    }
+    if (i >= 8 && i <= 23) {
+      position[i].style.backgroundColor = skyBlue;
+    }
+    if (i >= 24 && i <= position.length) {
+      position[i].style.backgroundColor = red;
+    }
+  }
 }
