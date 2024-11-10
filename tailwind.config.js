@@ -15,6 +15,7 @@ module.exports = {
         "50px": "minmax(50px, auto)",
       },
     },
+    fontFamily: { manrope: ["Manrope", "sans-serif"] },
   },
   plugins: [],
 };
