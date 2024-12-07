@@ -126,6 +126,7 @@ a {
     .regulations__title {
     }
     .regulations__text {
+      @apply my-1;
       .regulations__number {
       }
       .regulations_colorBox {

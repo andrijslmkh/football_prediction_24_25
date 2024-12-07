@@ -946,6 +946,11 @@ a{
   padding-bottom: 1.5rem;
 }
 
+.regulations .regulations__description .regulations__text{
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
 .regulations .regulations__description .regulations__text .regulations_colorBox{
   display: inline-block;
   height: 0.625rem;

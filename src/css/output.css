@@ -129,6 +129,9 @@ a {
 .regulations {
   @apply container mx-auto hidden py-6;
 }
+.regulations .regulations__description .regulations__text {
+  @apply my-1;
+}
 .regulations .regulations__description .regulations__text .regulations_colorBox {
   @apply inline-block h-2.5 w-2.5;
 }
