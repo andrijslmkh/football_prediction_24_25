@@ -8,7 +8,7 @@ function objSortPosition(obj) {
 }
 
 function arrSortTotal(arr) {
-  let result = [...arr];
+  let result = arr.slice();
   result.sort((a, b) => b.total - a.total);
   return result;
 }
