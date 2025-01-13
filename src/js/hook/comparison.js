@@ -22,9 +22,9 @@ function comparison(data, userData) {
             let dataArray = data[key][nameLeague];
             for (let i = 0; i < dataArray.length; i++) {
               for (let k = 0; k < userArray.length; k++) {
-                if (dataArray[i].id == userArray[k].id) {
+                if (dataArray[i].id === userArray[k].id) {
                   //
-                  if (dataArray[i].position == userArray[k].position) {
+                  if (dataArray[i].position === userArray[k].position) {
                     count = win(count);
                   } else if (
                     dataArray[i].position >= tirOneWith &&

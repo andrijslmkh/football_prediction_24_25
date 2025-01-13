@@ -14,7 +14,7 @@ function createTableData(dataTable, league = "lch") {
     const { id, name, position, played, points, icon, lost, won, drawn } =
       dataTable.data[league][i];
 
-    if (i == 0) {
+    if (i === 0) {
       arrHTML.push(`<div class="description_tier" >Straight to R16</div>`);
     }
 
@@ -42,14 +42,9 @@ function createTableData(dataTable, league = "lch") {
                     </div>`;
     arrHTML.push(out);
 
-    if (i == 7) {
-      arrHTML.push(
-        `<div class="description_tier">Knockout phase play-off places</div>`
-      );
-    }
-    if (i == 23) {
-      arrHTML.push(`<div class="description_tier">Elimination places</div>`);
-    }
+    if (i === 7) arrHTML.push(`<div class="description_tier">Knockout phase play-off places (Seeded)</div>`);
+    if (i === 15) arrHTML.push(`<div class="description_tier">Knockout phase play-off places (Unseeded)</div>`);
+    if (i === 23) arrHTML.push(`<div class="description_tier">Elimination places</div>`);
   }
   tableTeam.innerHTML = arrHTML.join("");
   positionColor();
@@ -143,7 +138,7 @@ function user() {
   let league = selectLeague.value;
 
   for (const key in usersPrediction) {
-    if (key == user) {
+    if (key === user) {
       addPredIcon(usersPrediction[key], league);
       colors(dataSorted, usersPrediction[key], league);
     }
