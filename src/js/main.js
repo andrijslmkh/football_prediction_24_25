@@ -42,9 +42,16 @@ function createTableData(dataTable, league = "lch") {
                     </div>`;
     arrHTML.push(out);
 
-    if (i === 7) arrHTML.push(`<div class="description_tier">Knockout phase play-off places (Seeded)</div>`);
-    if (i === 15) arrHTML.push(`<div class="description_tier">Knockout phase play-off places (Unseeded)</div>`);
-    if (i === 23) arrHTML.push(`<div class="description_tier">Elimination places</div>`);
+    if (i === 7)
+      arrHTML.push(
+        `<div class="description_tier">Knockout phase play-off places (Seeded)</div>`
+      );
+    if (i === 15)
+      arrHTML.push(
+        `<div class="description_tier">Knockout phase play-off places (Unseeded)</div>`
+      );
+    if (i === 23)
+      arrHTML.push(`<div class="description_tier">Elimination places</div>`);
   }
   tableTeam.innerHTML = arrHTML.join("");
   positionColor();
