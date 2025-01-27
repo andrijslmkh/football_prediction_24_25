@@ -27,7 +27,7 @@
 }
 
 body {
-  @apply m-0 box-border bg-[#0f2d37] px-4 font-manrope text-sm font-normal not-italic text-white;
+  @apply m-0 box-border overflow-hidden bg-[#0f2d37] font-manrope text-sm font-normal not-italic text-white;
 }
 
 select {
@@ -36,6 +36,14 @@ select {
 
 a {
   @apply tracking-wide text-white no-underline;
+}
+
+header {
+  @apply pt-4 text-center text-xl;
+}
+
+.wrapper {
+  @apply px-4;
 }
 
 .bg_green {
@@ -134,4 +142,38 @@ a {
 }
 .regulations .regulations__description .regulations__text .regulations_colorBox {
   @apply inline-block h-2.5 w-2.5;
+}
+
+.modal {
+  @apply absolute bottom-0 left-0 right-0 top-0 max-h-screen content-center overflow-auto rounded-xl bg-[#0f2d37] bg-opacity-10 backdrop-blur-sm;
+}
+.modal__window {
+  @apply relative m-auto md:h-[500px] md:w-[700px];
+}
+.modal__overlay {
+  @apply absolute bottom-0 left-0 right-0 top-0 z-30 bg-cover bg-center bg-no-repeat;
+}
+.modal__info {
+  @apply relative z-40 flex h-full flex-col items-center justify-center gap-6 p-6 backdrop-blur-sm md:flex-row;
+}
+.modal__img, .modal__description {
+  @apply md:w-1/2;
+}
+.modal__img {
+  @apply m-auto max-w-[70%];
+}
+.modal__description {
+  @apply flex flex-col gap-4 rounded-xl bg-[#0f2d37] bg-opacity-90 p-6 text-center leading-8;
+}
+.modal__description p span {
+  @apply font-bold;
+}
+.modal__mane {
+  @apply text-2xl font-bold;
+}
+.modal__btn {
+  @apply absolute right-6 top-6 z-50;
+}
+.modal__btn svg {
+  @apply h-6 w-6 transform fill-white transition-transform duration-300 hover:rotate-12;
 }
