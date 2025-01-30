@@ -168,7 +168,7 @@ header {
 .modal__description p span {
   @apply font-bold;
 }
-.modal__mane {
+.modal__name {
   @apply text-2xl font-bold;
 }
 .modal__btn {
