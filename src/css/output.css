@@ -27,7 +27,7 @@
 }
 
 body {
-  @apply m-0 box-border overflow-hidden bg-[#0f2d37] font-manrope text-sm font-normal not-italic text-white;
+  @apply m-0 box-border overflow-auto bg-[#0f2d37] font-manrope text-sm font-normal not-italic text-white;
 }
 
 select {
